@@ -65,7 +65,7 @@ constexpr size_t stashBucket =
 constexpr int allocMask = (1 << kNumPairPerBucket) - 1;
 const size_t bucketMask = ((1 << (int)log2(kNumBucket)) - 1);
 const size_t stashMask = (1 << (int)log2(stashBucket)) - 1;
-constexpr uint8_t stashHighMask = ~((uint8_t)stashMask);
+const uint8_t stashHighMask = ~((uint8_t)stashMask);
 
 #define BUCKET_INDEX(hash) ((hash >> kFingerBits) & bucketMask)
 #define GET_COUNT(var) ((var)&countMask)
