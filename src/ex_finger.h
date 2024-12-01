@@ -63,8 +63,8 @@ const constexpr size_t kNumBucket =
 constexpr size_t stashBucket =
     2; /* the number of stash buckets in one segment*/
 constexpr int allocMask = (1 << kNumPairPerBucket) - 1;
-constexpr size_t bucketMask = ((1 << (int)log2(kNumBucket)) - 1);
-constexpr size_t stashMask = (1 << (int)log2(stashBucket)) - 1;
+const size_t bucketMask = ((1 << (int)log2(kNumBucket)) - 1);
+const size_t stashMask = (1 << (int)log2(stashBucket)) - 1;
 constexpr uint8_t stashHighMask = ~((uint8_t)stashMask);
 
 #define BUCKET_INDEX(hash) ((hash >> kFingerBits) & bucketMask)
